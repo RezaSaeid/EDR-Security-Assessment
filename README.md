@@ -13,16 +13,10 @@ A lab-focused framework for evaluating endpoint security resilience, telemetry q
 - Detection/prevention behavior for controlled test cases
 - Alert quality, evidence, and analyst visibility
 
-## Repository layout
-```text
-methodology/
-test-cases/
-telemetry/
-reports/
-schemas/
-templates/
-  test-report-template.md
-```
+## Start here
+- [Assessment methodology](docs/assessment-methodology.md)
+- [Safe test record](docs/safe-test-record.md)
+- [Test report template](templates/test-report-template.md)
 
 ## Test principles
 - Use isolated Windows lab VMs and synthetic data.
