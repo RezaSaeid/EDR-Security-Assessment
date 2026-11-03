@@ -1,0 +1,18 @@
+# Keep raw telemetry and customer/environment data out of Git
+raw-telemetry/
+private-evidence/
+customer-data/
+secrets/
+certificates/
+*.pfx
+*.p12
+*.key
+*.pem
+*.evtx
+*.etl
+*.dmp
+*.pcap
+*.pcapng
+*.log
+*.zip
+*.7z
