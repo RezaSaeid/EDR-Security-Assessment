@@ -46,3 +46,7 @@ Where applicable, record detection latency, prevention outcome, telemetry comple
 ## Current maturity and safety
 
 The test matrix is planning material unless a test record contains actual execution evidence. Do not infer test completion from a JSON record or schema. Use isolated VMs, synthetic data, and written authorization. Keep destructive or availability-impacting tests out of scope unless separately approved in writing with rollback.
+
+## Architecture & Technical Case Study
+
+See [the architecture and technical case study](docs/case-study-and-architecture.md) for the domain-specific system model, analysis workflow, evidence requirements, and quality gates.
