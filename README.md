@@ -1,39 +1,22 @@
 # EDR Security Assessment
 
-A lab-focused framework for evaluating endpoint security resilience, telemetry quality, and self-protection through safe, authorized tests.
+A lab-focused framework for evaluating endpoint security resilience, self-protection, telemetry quality, and management-channel security.
 
 > **Status:** Assessment framework. Product-specific results are published only when reproduced and sanitized. No vendor endorsement or certification is implied.
 
 ## Assessment domains
-- Agent service availability and recovery
-- Agent and driver integrity
-- Tamper resistance and configuration protection
-- Telemetry generation, delivery, and integrity
-- Agent-to-server transport security and authentication
-- Detection/prevention behavior for controlled test cases
-- Alert quality, evidence, and analyst visibility
+Service availability and recovery, driver integrity, tamper resistance, telemetry continuity, agent-server authentication, detection/prevention behavior, alert quality, and analyst visibility.
 
 ## Start here
 - [Assessment methodology](docs/assessment-methodology.md)
 - [Safe test record](docs/safe-test-record.md)
+- [Planned self-protection test matrix](test-cases/test-matrix.md)
+- [Machine-readable result schema](schemas/test-result.schema.json)
+- [Schema usage notes](schemas/README.md)
 - [Test report template](templates/test-report-template.md)
 
-## Test principles
-- Use isolated Windows lab VMs and synthetic data.
-- Obtain explicit authorization and define scope.
-- Separate prevention, detection, and telemetry outcomes.
-- Record exact product/build/configuration and prerequisites.
-- Treat missing telemetry as an observation, not automatically as a vulnerability.
-- Never include customer data, internal IPs, credentials, certificates, hostnames, or proprietary artifacts.
+## Measurement principles
+Separate prevention, detection, and telemetry. Record expected versus observed events, detection latency, recovery time, product/build/policy, and limitations. Missing telemetry is an observation, not automatically a vulnerability.
 
-## Result categories
-| Category | Meaning |
-|---|---|
-| Prevented | The control blocked the test behavior |
-| Detected | An alert or detection was generated |
-| Telemetry only | Relevant events were recorded without a detection |
-| Not observed | Expected evidence was not found in checked sources |
-| Inconclusive | Conditions or evidence were insufficient |
-
-## Responsible use
-Run tests only against products and environments you are authorized to assess. Keep destructive or availability-impacting cases disabled unless separately approved.
+## Publication and safety
+Use isolated VMs, synthetic data, written authorization, and rollback. Do not publish customer data, internal IPs, credentials, certificates, hostnames, or proprietary detection logic. Keep destructive or availability-impacting tests disabled unless separately approved.
