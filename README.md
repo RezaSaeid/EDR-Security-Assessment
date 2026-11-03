@@ -16,6 +16,7 @@ A lab-focused framework for assessing endpoint security resilience, agent self-p
 Service availability and recovery, driver integrity, tamper resistance, telemetry continuity, agent-server authentication, detection/prevention behavior, alert quality, and analyst visibility.
 
 ## Start here
+- [Technical assessment framework](docs/technical-assessment-framework.md)
 
 - [Assessment methodology](docs/assessment-methodology.md)
 - [Safe test record](docs/safe-test-record.md)
