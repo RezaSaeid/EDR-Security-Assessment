@@ -13,7 +13,7 @@ A lab-focused framework for evaluating endpoint security resilience, telemetry q
 - Detection/prevention behavior for controlled test cases
 - Alert quality, evidence, and analyst visibility
 
-## Structure
+## Repository layout
 ```text
 methodology/
 test-cases/
