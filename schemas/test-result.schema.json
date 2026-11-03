@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EDR Assessment Test Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["test_id", "test_name", "environment", "expected", "observed", "outcome", "limitations"],
+  "properties": {
+    "test_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9_-]{2,40}$"},
+    "test_name": {"type": "string", "minLength": 3},
+    "test_date_utc": {"type": "string", "format": "date-time"},
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["os_build", "product_version", "is_isolated_lab"],
+      "properties": {
+        "os_build": {"type": "string"},
+        "product_version": {"type": "string"},
+        "policy_id": {"type": "string"},
+        "is_isolated_lab": {"type": "boolean", "const": true}
+      }
+    },
+    "expected": {
+      "type": "object",
+      "required": ["prevention", "detection", "telemetry"],
+      "properties": {
+        "prevention": {"type": "string"},
+        "detection": {"type": "string"},
+        "telemetry": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "observed": {
+      "type": "object",
+      "required": ["host_events", "console_events"],
+      "properties": {
+        "host_events": {"type": "array", "items": {"type": "string"}},
+        "console_events": {"type": "array", "items": {"type": "string"}},
+        "detection_latency_seconds": {"type": ["number", "null"], "minimum": 0},
+        "recovery_time_seconds": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "outcome": {"enum": ["Prevented", "Detected", "Telemetry-only", "Not-observed", "Inconclusive", "Not-tested"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "sanitized_for_publication": {"type": "boolean", "default": false}
+  }
+}
